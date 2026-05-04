@@ -138,7 +138,7 @@
 									<h5>Track Complaint</h5>
 									<p class="small text-muted">Check status of existing
 										complaints</p>
-									<a href="complaint_status" class="btn btn-warning btn-sm">Track
+									<a href="complaint_history" class="btn btn-warning btn-sm">Track
 										Now</a>
 								</div>
 							</div>

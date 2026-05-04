@@ -114,15 +114,12 @@
 					alt="Maharashtra Logo" width="30" height="30">
 				<p class="navbar nav-logo mb-0 text-light">Government of Maharashtra</p>
 			</div>
+			
 			<div class="d-flex">
 				<button class="btn format-btn" aria-label="Increase text size">A<sup>+</sup></button>
 				<button class="btn format-btn" aria-label="Reset text size">A<sup>=</sup></button>
 				<button class="btn format-btn" aria-label="Decrease text size">A<sup>-</sup></button>
-				<select class="format-btn form-select language-switcher" aria-label="Select language">
-					<option value="en" selected>English</option>
-					<option value="mr">Marathi</option>
-					<option value="hi">Hindi</option>
-				</select>
+				
 			</div>
 		</div>
 	</nav>
@@ -433,22 +430,51 @@
 		}
 		
 		// Format text size buttons
-		document.querySelectorAll('.format-btn').forEach(btn => {
-			btn.addEventListener('click', function() {
-				if (this.textContent.includes('+')) {
-					document.body.style.fontSize = 'larger';
-				} else if (this.textContent.includes('-')) {
-					document.body.style.fontSize = 'smaller';
-				} else {
-					document.body.style.fontSize = 'medium';
-				}
-			});
-		});
+		
 	</script>
 	
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
 		crossorigin="anonymous"></script>
+		
+		<script>
+// ================= TEXT SIZE CONTROL =================
+
+// Get saved font size or default 16
+let currentSize = parseInt(localStorage.getItem("fontSize")) || 16;
+
+// Apply font size on page load
+document.documentElement.style.fontSize = currentSize + "px";
+
+// Get all 3 buttons
+const buttons = document.querySelectorAll(".format-btn");
+
+// A+ (Increase)
+buttons[0].onclick = () => {
+    currentSize += 1;
+    applySize();
+};
+
+// A= (Reset)
+buttons[1].onclick = () => {
+    currentSize = 16;
+    applySize();
+};
+
+// A- (Decrease)
+buttons[2].onclick = () => {
+    currentSize -= 1;
+    applySize();
+};
+
+// Apply function
+function applySize() {
+    document.documentElement.style.fontSize = currentSize + "px";
+    localStorage.setItem("fontSize", currentSize);
+}
+</script>
+		
+		
 </body>
 </html>

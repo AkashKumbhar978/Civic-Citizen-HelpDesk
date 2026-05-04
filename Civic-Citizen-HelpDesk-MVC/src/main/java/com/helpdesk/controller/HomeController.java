@@ -57,6 +57,11 @@ public class HomeController {
         return "ComplaintHistory";
     }
     
+    @RequestMapping("/faq")
+    public String faq_page() {
+        return "faq";
+    }
+    
   
     
     

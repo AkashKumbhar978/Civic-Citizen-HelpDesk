@@ -40,11 +40,7 @@
 				<button class="btn format-btn" aria-label="Increase text size">A<sup>+</sup></button>
 				<button class="btn format-btn" aria-label="Reset text size">A<sup>=</sup></button>
 				<button class="btn format-btn" aria-label="Decrease text size">A<sup>-</sup></button>
-				<select class="format-btn form-select language-switcher" aria-label="Select language">
-					<option value="en" selected>English</option>
-					<option value="mr">Marathi</option>
-					<option value="hi">Hindi</option>
-				</select>
+				
 			</div>
 		</div>
 	</nav>
@@ -115,7 +111,7 @@
 						<a href="login_page"
 							class="btn btn-warning btn-lg quick-action-btn"> <i
 							class="fas fa-edit me-2"></i> File a Complaint
-						</a> <a href="services"
+						</a> <a href="login_page"
 							class="btn btn-outline-light btn-lg quick-action-btn"> <i
 							class="fas fa-concierge-bell me-2"></i> Browse Services
 						</a>
@@ -178,10 +174,7 @@
 							</div>
 						</div>
 
-						<div class="text-center mt-3">
-							<a href="all_services" class="btn btn-outline-primary btn-sm">View
-								All Services</a>
-						</div>
+					
 					</div>
 				</div>
 			</div>
@@ -242,7 +235,6 @@
 		</div>
 		<div class="row g-4">
 			<div class="col-md-2 col-4">
-				<a href="road_issues" class="text-decoration-none">
 					<div class="card service-card shadow-sm text-center h-100">
 						<div class="card-body py-4">
 							<i class="fas fa-road text-warning mb-3" style="font-size: 2rem;"></i>
@@ -252,7 +244,6 @@
 				</a>
 			</div>
 			<div class="col-md-2 col-4">
-				<a href="electricity_issues" class="text-decoration-none">
 					<div class="card service-card shadow-sm text-center h-100">
 						<div class="card-body py-4">
 							<i class="fas fa-bolt text-warning mb-3" style="font-size: 2rem;"></i>
@@ -262,7 +253,6 @@
 				</a>
 			</div>
 			<div class="col-md-2 col-4">
-				<a href="water_issues" class="text-decoration-none">
 					<div class="card service-card shadow-sm text-center h-100">
 						<div class="card-body py-4">
 							<i class="fas fa-tint text-warning mb-3" style="font-size: 2rem;"></i>
@@ -272,7 +262,6 @@
 				</a>
 			</div>
 			<div class="col-md-2 col-4">
-				<a href="waste_issues" class="text-decoration-none">
 					<div class="card service-card shadow-sm text-center h-100">
 						<div class="card-body py-4">
 							<i class="fas fa-trash text-warning mb-3"
@@ -283,7 +272,6 @@
 				</a>
 			</div>
 			<div class="col-md-2 col-4">
-				<a href="drainage_issues" class="text-decoration-none">
 					<div class="card service-card shadow-sm text-center h-100">
 						<div class="card-body py-4">
 							<i class="fas fa-water text-warning mb-3"
@@ -293,14 +281,7 @@
 					</div>
 				</a>
 			</div>
-			<div class="col-md-2 col-4">
-				<a href="other_issues" class="text-decoration-none">
-					<div class="card service-card shadow-sm text-center h-100">
-						<div class="card-body py-4">
-							<i class="fas fa-ellipsis-h text-warning mb-3"
-								style="font-size: 2rem;"></i>
-							<h6 class="card-title">Other Issues</h6>
-						</div>
+			
 					</div>
 				</a>
 			</div>
@@ -524,7 +505,7 @@
 					</p>
 					<p class="small mb-1">
 						<i class="fas fa-envelope me-2"></i> Email:
-						helpdesk@maharashtra.gov.in
+						civiccitizenhelpdesk@gmail.com
 					</p>
 					<p class="small mb-0">
 						<i class="fas fa-clock me-2"></i> Mon-Sat: 9:00 AM - 6:00 PM
@@ -556,6 +537,43 @@
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
 		crossorigin="anonymous"></script>
+		
+		<script>
+// ================= TEXT SIZE CONTROL =================
+
+// Get saved font size or default 16
+let currentSize = parseInt(localStorage.getItem("fontSize")) || 16;
+
+// Apply font size on page load
+document.documentElement.style.fontSize = currentSize + "px";
+
+// Get all 3 buttons
+const buttons = document.querySelectorAll(".format-btn");
+
+// A+ (Increase)
+buttons[0].onclick = () => {
+    currentSize += 1;
+    applySize();
+};
+
+// A= (Reset)
+buttons[1].onclick = () => {
+    currentSize = 16;
+    applySize();
+};
+
+// A- (Decrease)
+buttons[2].onclick = () => {
+    currentSize -= 1;
+    applySize();
+};
+
+// Apply function
+function applySize() {
+    document.documentElement.style.fontSize = currentSize + "px";
+    localStorage.setItem("fontSize", currentSize);
+}
+</script>
 
 </body>
 </html>
