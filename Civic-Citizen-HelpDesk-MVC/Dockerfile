@@ -1,4 +1,4 @@
-FROM openjdk:17-jdk-slim
+FROM openjdk:17-jdk
 WORKDIR /app
 COPY target/*.war app.war
 ENTRYPOINT ["java", "-jar", "app.war"]
