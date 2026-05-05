@@ -1,4 +1,9 @@
 FROM eclipse-temurin:17-jdk
+
 WORKDIR /app
-COPY target/*.war app.war
-ENTRYPOINT ["java", "-jar", "app.war"]
+
+COPY . .
+
+RUN ./mvnw clean package -DskipTests
+
+CMD ["java", "-jar", "target/*.war"]
