@@ -55,10 +55,10 @@ public class Complaint {
     @Column(name="image_path", length = 1000)
     private String imagePath;
 
-    @Column(name="image_base64", columnDefinition = "LONGTEXT")
+    @Column(name="image_base64", columnDefinition = "TEXT")
     private String imageBase64;
 
-    @Column(name="files_json", columnDefinition = "LONGTEXT")
+    @Column(name="files_json", columnDefinition = "TEXT")
     private String filesJson;
 
     private String status;
