@@ -4,6 +4,7 @@ WORKDIR /app
 
 COPY . .
 
-RUN ./mvnw clean package -DskipTests
+RUN chmod +x mvnw
+RUN ./mvnw clean install -DskipTests
 
-CMD ["java","-jar","target/*.jar"]
+CMD ["java","-jar","target/Civic_Citizen_Help_Desk-0.0.1-SNAPSHOT.jar"]
