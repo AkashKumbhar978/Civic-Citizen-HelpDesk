@@ -23,9 +23,18 @@ public class Service_Implementation {
     @Autowired
     private RestTemplate restTemplate;
 
-    // ===== BASE URLs =====
-    private static final String ROOT = "http://localhost:8282";
-    private static final String API  = "http://localhost:8282/api";
+	/*
+	 * // ===== BASE URLs for Local Running ===== private static final String ROOT =
+	 * "http://localhost:8282"; private static final String API =
+	 * "http://localhost:8282/api";
+	 */
+    
+ // ===== BASE URLs =====
+    private static final String ROOT =
+            "https://civic-citizen-helpdesk-1.onrender.com";
+
+    private static final String API =
+            "https://civic-citizen-helpdesk-1.onrender.com/api";
 
     // ================= VALIDATORS (ROOT) =================
 

@@ -32,8 +32,7 @@
 document.addEventListener("DOMContentLoaded", function () {
 
     // Load Talukas on page load
-    fetch("/getTaluka")
-        .then(response => {
+fetch("https://civic-citizen-helpdesk-1.onrender.com/api/getTaluka")        .then(response => {
             if (!response.ok) throw new Error("Network response was not ok");
             return response.json();
         })
@@ -61,8 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
         villageSelect.innerHTML = '<option value="">Select Village</option>';
 
         if (talukaId) {
-            fetch("/getVillageByTaluka/" + talukaId)
-                .then(response => {
+        	fetch("https://civic-citizen-helpdesk-1.onrender.com/api/getVillageByTaluka/" + talukaId)                .then(response => {
                     if (!response.ok) throw new Error("Network response was not ok");
                     return response.json();
                 })
