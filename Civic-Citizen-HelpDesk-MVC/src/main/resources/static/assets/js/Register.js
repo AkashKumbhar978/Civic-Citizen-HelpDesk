@@ -94,7 +94,7 @@ async function validateEmail(email) {
     emailValidation.innerHTML = '<span class="validation-checking">Checking email...</span>';
     
     try {
-        const response = await fetch("/checkEmail", {
+        const response = await fetch("https://civic-citizen-helpdesk-1.onrender.com/checkEmail", {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
             body: "email=" + encodeURIComponent(email)
@@ -147,7 +147,7 @@ async function validateMobile(mobile) {
     mobileValidation.innerHTML = '<span class="validation-checking">Checking mobile...</span>';
     
     try {
-        const response = await fetch("/checkMobile", {
+        const response = await fetch("https://civic-citizen-helpdesk-1.onrender.com/checkMobile", {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
             body: "mobile=" + encodeURIComponent(mobile)
@@ -200,7 +200,7 @@ async function validateAadhar(aadhar) {
     aadharValidation.innerHTML = '<span class="validation-checking">Checking Aadhar...</span>';
     
     try {
-        const response = await fetch("/checkAadhar", {
+        const response = await fetch("https://civic-citizen-helpdesk-1.onrender.com/checkAadhar", {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
             body: "aadhar=" + encodeURIComponent(aadhar)
@@ -263,7 +263,7 @@ async function sendOTP() {
     sendOtpBtn.disabled = true;
     
     try {
-        const response = await fetch("/sendotp", {
+        const response = await fetch("https://civic-citizen-helpdesk-1.onrender.com/sendotp", {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
             body: "email=" + encodeURIComponent(email)
@@ -303,7 +303,7 @@ async function verifyOTP() {
     verifyOtpBtn.disabled = true;
     
     try {
-        const response = await fetch("/verifyotp", {
+        const response = await fetch("https://civic-citizen-helpdesk-1.onrender.com/verifyotp", {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
             body: "otp=" + encodeURIComponent(otp)
